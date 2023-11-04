@@ -5,12 +5,12 @@ plugins{
 description = "A Sample SpringBoot Application"
 version = "0.1-alpha"
 
-task copy(type:Copy, group: "Custom", description: "Testing copy functionality" ){
+tasks.register('copy', Copy) {
     from "src/main/java"
     into "dest"
 }
 
-task zip(type: Zip, group: "Zip", description: "Testing zip functionality"){
+tasks.register('zip', Zip) {
     from "src"
     setArchiveName "test.zip"
 }
